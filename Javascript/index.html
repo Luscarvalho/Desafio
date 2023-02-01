@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>OMDb</title>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="#">OMDb</a>
+      <nav id="nav">
+        <!-- <button id="btn-mobile">
+          <span id="icon-btn"> </span>
+        </button> -->
+        <ul id="menu">
+          <li><a href="#servicos">Filmes</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </nav>
+    </header>
+    <form>
+      <input
+        type="text"
+        name="search-movie"
+        placeholder="Digite o nome do filme:"
+      />
+      <input type="number" name="year-movie" placeholder="Ano:" />
+      <select name="type-movie">
+        <option value="">Todos</option>
+        <option value="movie">Filmes</option>
+        <option value="series">Séries</option>
+        <option value="episode">Episódios</option>
+      </select>
+      <button>Pesquisar</button>
+    </form>
+    <p id="total-movies"></p>
+    <section class="movies-list"></section>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
