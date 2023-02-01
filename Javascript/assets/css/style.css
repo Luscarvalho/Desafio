@@ -79,6 +79,7 @@ form {
   margin: 50px auto;
 }
 
+input,
 input::placeholder,
 select,
 button {
@@ -92,6 +93,7 @@ input:nth-child(1) {
   padding: 10px;
   grid-column: input-name;
   grid-area: "input-name";
+  border: 2px solid var(--main-color);
 }
 
 input:nth-child(2) {
@@ -101,6 +103,7 @@ input:nth-child(2) {
   padding: 10px;
   grid-row: input-year;
   grid-area: "input-year";
+  border: 2px solid var(--main-color);
 }
 
 select {
@@ -110,6 +113,7 @@ select {
   padding: 10px;
   grid-row: selection-type;
   grid-area: "selection-type";
+  border: 2px solid var(--main-color);
 }
 
 button {
@@ -120,12 +124,20 @@ button {
   grid-column: btn-search;
   grid-area: "btn-search";
   cursor: pointer;
+  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
+button:hover {
+  color: var(--white-text-color);
+  background-color: var(--main-hover-color);
+}
 /* Filmes */
 .movies-list {
   width: 90%;
-  margin: 0 5%;
+  margin: 0 5% 5% 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -169,11 +181,38 @@ button {
   padding: 0 20px;
 }
 
+/* FOOTER */
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: var(--main-color);
+  color: var(--white-text-color);
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
 /* ------MEDIA SCREEN TABLET------ */
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   .movie {
     width: 30%;
+    height: 400px;
+  }
+  .movies-list {
+    margin: 0 5% 10% 5%;
+  }
+  form {
+    width: 80%;
+  }
+  .movie a p {
+    height: 9%;
   }
 }
 /* ------MEDIA SCREEN SMATPHONE------ */
@@ -181,5 +220,25 @@ button {
 @media screen and (max-width: 767px) {
   .movie {
     width: 45%;
+    height: 300px;
+  }
+  form {
+    grid-template-areas:
+      "input-name"
+      "input-year"
+      "selection-type"
+      " btn-search";
+  }
+
+  .movies-list {
+    margin: 0 5% 20% 5%;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  .movie a p {
+    height: 10%;
   }
 }
